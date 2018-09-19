@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.min.css">
+	<title>乐在一起</title>
+	<script>
+		fnResize()
+		window.onresize = function () {
+		fnResize()
+		}
+		function fnResize() {
+		var deviceWidth = document.documentElement.clientWidth || window.innerWidth
+		if (deviceWidth >= 750) {
+		deviceWidth = 750
+		}
+		if (deviceWidth <= 320) {
+		deviceWidth = 320
+		}
+		document.documentElement.style.fontSize = (deviceWidth / 7.5) + 'px'
+		}
+		document.querySelector('body').addEventListener('touchstart', function (ev) {
+		    event.preventDefault();
+		});
+	</script>
+	<style>
+		html,body,.swiper-container,.swiper-container {
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			height: 100%;
+
+		}
+		.swiper-slide  {
+			position: relative;
+			width: 100%;
+			height: 100%;
+		}
+		.page-bg {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+		}
+
+		.next {
+			position: absolute;
+			left: 50%;
+			margin-left: -.225rem;
+			bottom: .40rem;
+			width: .45rem;
+			height: .31rem;
+			z-index: 999;
+			animation: ani_next 2s linear 0s infinite;
+		}
+
+		.img {
+			line-height: 0;
+			width: 100%;
+			height: 100%;
+		}
+		.imga {
+			width: 100%;
+			height: 100%;
+			border-radius: .2rem;
+			overflow: hidden;
+		}
+		@keyframes ani_next {
+			25% {transform: translateY(5px);}
+			50% {transform: translateY(0px);}
+			75% {transform: translateY(-5px);}
+			100% {transform: translateY(0px);}
+		}
+		.ani-le {
+			position: absolute;
+			width: 1.91rem;
+			height: 2.07rem;
+			top: 2.5rem;
+			left: .5rem;
+			opacity: 0;
+			animation: ani_le .5s ease-in 1s forwards;
+		}
+		.ani-zai {
+			position: absolute;
+			width: 1.66rem;
+			height: 1.68rem;
+			top: 2.7rem;
+			left: 2.3rem;
+			opacity: 0;
+			animation: ani_le .5s ease-in 1.3s forwards;
+		}
+		.ani-yi {
+			position: absolute;
+			width: 1.35rem;
+			height: .71rem;
+			top: 2.6rem;
+			left: 3.8rem;
+			opacity: 0;
+			animation: ani_le .5s ease-in 1.6s forwards;
+		}
+		.ani-qi {
+			position: absolute;
+			width: 2.02rem;
+			height: 2.06rem;
+			top: 2.5rem;
+			left: 4.9rem;
+			opacity: 0;
+			animation: ani_le .5s ease-in 1.9s forwards;
+		}
+		@keyframes ani_le {
+			0% {transform: translateY(-200px) scale(0);opacity: 0;}
+			70% {transform: translateY(0) scale(1);opacity: .7}
+			85% {transform: translateY(50px) scale(1.5, .7);opacity: .85}
+			100% {transform: translateY(0) scale(1);opacity: 1}
+		}
+		.music {
+			position: fixed;
+			top: .4rem;
+			right: .4rem;
+			width: .6rem;
+			height: .6rem;
+			border-radius: 50%;
+			overflow: hidden;
+			z-index: 999;
+			animation: ani_star 3s linear .3s infinite;
+		}
+		.music-img {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: .6rem;
+			height: .6rem;
+		}
+
+		.star1 {
+			position: absolute;
+			width: .8rem;
+			height: .8rem;
+			top: 2.8rem;
+			left: .06rem;
+			animation: ani_star 3s linear .3s infinite;
+		}
+		.star2 {
+			position: absolute;
+			width: .8rem;
+			height: .8rem;
+			top: 2rem;
+			left: 3.4rem;
+			animation: ani_star 3s linear .0s infinite;
+		}
+		.star3 {
+			position: absolute;
+			width: .8rem;
+			height: .8rem;
+			top: 3.5rem;
+			left: 6.6rem;
+			animation: ani_star 3s linear .6s infinite;
+		}
+		@keyframes ani_star {
+			0% {transform-origin:center;transform: rotate(0deg);opacity: 1}
+			50% {opacity: .3}
+			100% {transform-origin:center;transform: rotate(360deg);opacity: 1}
+		}
+		.sun {
+			position: absolute;
+			width: 1.38rem;
+			height: 1.16rem;
+			top: 1.6rem;
+			left: 1.85rem;
+			animation: ani_sun 5s linear 0s infinite;
+		}
+		@keyframes ani_sun {
+			0% {transform: rotate(0deg) scale(1.1);}
+			25% {transform: rotate(-15deg) scale(1);}
+			50% {transform: rotate(0deg) scale(1.1);}
+			75% {transform: rotate(15deg) scale(1);}
+			100% {transform: rotate(0deg) scale(1.1);}
+		}
+		.tip {
+			position: absolute;
+			width: 5.49rem; 
+			height: .33rem;
+			top: 4.3rem;
+			left: 50%;
+			margin-left: -2.745rem;
+			opacity: 0;
+			animation: ani_tip .5s linear 1.9s forwards;
+		}
+		.title {
+			position: absolute;
+			width: 5.47rem; 
+			height: .61rem;
+			top: 5.3rem;
+			left: 50%;
+			margin-left: -2.73rem;
+			opacity: 0;
+			animation: ani_title .5s linear 1.9s forwards;
+		}
+		@keyframes ani_tip{
+			0% {transform: translateX(-800px);opacity: 0}
+			100% {transform: translateX(0);opacity: 1}
+		}
+		@keyframes ani_title{
+			0% {transform: translateX(1200px);opacity: 0}
+			100% {transform: translateX(0);opacity: 1}
+		}
+
+		.font1 {
+			font-size: .32rem;
+			text-indent: .64rem;
+			color: #fff;
+			line-height: .56rem;
+		}
+
+		.font2 {
+			font-size: .32rem;
+			text-indent: .64rem;
+			color: #33b977;
+			line-height: .56rem;
+		}
+		.font3 {
+			font-size: .28rem;
+			text-indent: .64rem;
+			color: #33b977;
+			line-height: .54rem;
+		}
+		.font4 {
+			font-size: .28rem;
+			text-indent: .64rem;
+			color: #fff;
+			line-height: .54rem;
+		}
+
+		.second-page {
+			width: 100%;
+			height: 100%;
+			box-sizing: border-box;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: center;
+		}
+		.second-padding {
+			padding: .4rem 0;
+		}
+		.second-top {
+			width: 6.9rem;
+		}
+		.second-btm {
+			position: relative;
+			width: 6.9rem;
+			height: 5rem;
+			box-sizing: border-box;
+			padding: .5rem;
+		}
+		.second-bg {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			z-index: -1;
+		}
+		.second-container {
+			width: 100%;
+			height: 100%;
+			border-radius: .2rem;
+			background-color: #fff;
+			overflow: hidden;
+		}
+		.third-padding {
+			padding: 1.3rem .5rem .4rem;
+		}
+		.third-btm {
+			position: relative;
+			width: 6.9rem;
+			height: 8.95rem;
+			box-sizing: border-box;
+			padding: .6rem .5rem;
+		}
+		.fouth-btm {
+			position: relative;
+			width: 6.9rem;
+			height: 8.3rem;
+			box-sizing: border-box;
+			padding: .6rem .5rem;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="music" onclick="play()"><img class="music-img" src="./imgs/music.svg"></div>
+	<audio src= "https://wxapp-1252003894.cos.ap-chengdu.myqcloud.com/life.MP3" id="audio" hidden></audio>
+	<div class="swiper-container" id='all'>
+	  <div class="swiper-wrapper">
+	  	<!-- 第一屏 -->
+	    <div class="swiper-slide">
+			<div class="page-bg"><img class="img" src="./imgs/bg_1.jpg"></div>
+			<div class="ani-le"><img class="img" src="./imgs/t_1.png"></div>
+			<div class="ani-zai"><img class="img" src="./imgs/t_2.png"></div>
+			<div class="ani-yi"><img class="img" src="./imgs/t_3.png"></div>
+			<div class="ani-qi"><img class="img" src="./imgs/t_4.png"></div>
+			<img class="star1" src="./imgs/star.png">
+			<img class="star2" src="./imgs/star.png">
+			<img class="star3" src="./imgs/star.png">
+			<div class="sun"><img class="img" src="./imgs/sun.png"></div>
+			<div class="tip"><img class="img" src="./imgs/t_5.png"></div>
+			<div class="title"><img class="img" src="./imgs/t_6.png"></div>
+			<img class="next" idx="0" src="./imgs/next.png">
+	    </div>
+		<!-- 第二屏 -->
+	    <div class="swiper-slide">
+			<div class="page-bg"><img class="img" src="./imgs/bg_2.jpg"></div>
+			<div class="second-page second-padding">
+				<div class="second-top font1">2018年9月8日-9月9日，公司组织全体员工以“乐在一起”为主题开展了平江福寿山&连云山互动式拓展训练培训活动。此次拓展训练活动展开了六大项目 — 破冰起航、呼吸的力量、溯溪、野炊、篝火晚会、漂流。每一项激情洋溢、热情高涨的项目过程中，都有我们团结一致、协调共赢的身影；我们攻克了一个又一个的难关，同事之间的认识和了解彼此更加深入。短短两天的活动行程，每一秒印象定格在所有小伙伴的心里，留下的都是永恒的快乐和美好。</div>
+				<div class="second-btm">
+					<div class="second-bg"><img class="img" src="./imgs/02_pbg.png"></div>
+					<div class="second-container" id='second'>
+						<div class="swiper-wrapper">
+							<div class="swiper-slide"><img class="imga" src="./imgs/2_1.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/2_2.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/2_3.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/2_4.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/2_5.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/2_6.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/2_7.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/2_8.jpg"></div>
+						</div>
+					</div>
+				</div>	
+				<div class="second-other font1">&lt;- 左右滑动查看更多照片 -&gt;</div>
+			</div>
+			
+			<img class="next" idx="1" src="./imgs/next.png">
+	    </div>
+	    <!-- 第三屏 -->
+	    <div class="swiper-slide">
+	    	<div class="page-bg"><img class="img" src="./imgs/bg_3.jpg"></div>
+			<div class="second-page third-padding">
+				<div class="second-top font2">小伙伴们分成六支队伍，每队推选一名队长起一个队名并选出一首队歌和一句队号，营造团队气氛。</div>
+				<div class="third-btm">
+					<div class="second-bg"><img class="img" src="./imgs/03_pbg.png"></div>
+					<div class="second-container" id='third'>
+						<div class="swiper-wrapper">
+							<div class="swiper-slide"><img class="imga" src="./imgs/3_1.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/3_2.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/3_3.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/3_4.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/3_5.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/3_6.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/3_7.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/3_8.jpg"></div>
+						</div>
+					</div>
+				</div>	
+			</div>
+			<img class="next" idx="2" src="./imgs/next.png">
+	    </div>
+	    <!-- 第四屏 -->
+	    <div class="swiper-slide">
+	    	<div class="page-bg"><img class="img" src="./imgs/bg_4.jpg"></div>
+	    	<div class="second-page third-padding">
+				<div class="second-top font4">呼吸的力量，培养高度契合执行力，发挥团队合作的力量。每一队都在争分夺秒，从刚开始的混乱不堪到最后各队的团结一心完成挑战，每队的表现都非常棒。</div>
+				<div class="fouth-btm">
+					<div class="second-bg"><img class="img" src="./imgs/03_pbg.png"></div>
+					<div class="second-container" id='fouth'>
+						<div class="swiper-wrapper">
+							<div class="swiper-slide"><img class="imga" src="./imgs/04_1.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/04_2.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/04_3.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/04_4.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/04_5.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/04_6.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/04_7.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/04_8.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/04_9.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/04_10.jpg"></div>
+						</div>
+					</div>
+				</div>	
+			</div>
+			<img class="next" idx="3" src="./imgs/next.png">
+	    </div>
+	    <!-- 第五屏 -->
+	    <div class="swiper-slide">
+	    	<div class="page-bg"><img class="img" src="./imgs/bg_5.jpg"></div>
+	    	<div class="second-page third-padding">
+				<div class="second-top font3">正所谓会当凌绝顶，一览众山小，惊险又刺激溯溪之旅，在陡峭峡谷间激流勇进，大家相互扶持，溪水的水温和的水花让我们的身体体会到一种难以言表的快感，当我们攀登到最高点的时候，觉得一切努力都是值得的。</div>
+				<div class="fouth-btm">
+					<div class="second-bg"><img class="img" src="./imgs/03_pbg.png"></div>
+					<div class="second-container" id='fifth'>
+						<div class="swiper-wrapper">
+							<div class="swiper-slide"><img class="imga" src="./imgs/05_1.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/05_2.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/05_3.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/05_4.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/05_5.jpg"></div>
+						</div>
+					</div>
+				</div>	
+			</div>
+			<img class="next" idx="4" src="./imgs/next.png">
+	    </div>
+	    <!-- 第六屏 -->
+	    <div class="swiper-slide">
+	    	<div class="page-bg"><img class="img" src="./imgs/bg_6.jpg"></div>
+	    	<div class="second-page third-padding">
+				<div class="second-top font1">各队大比拼生活技能开始啦~~晚餐靠自己动手解决，各展身手，深藏不露，你看， 做饭菜的可大部分是咱们的男同事，做出来的菜可真是秀色可餐啊~可见生活中个个都是贤夫良父呀~~~</div>
+				<div class="fouth-btm">
+					<div class="second-bg"><img class="img" src="./imgs/03_pbg.png"></div>
+					<div class="second-container" id='sixth'>
+						<div class="swiper-wrapper">
+							<div class="swiper-slide"><img class="imga" src="./imgs/06_1.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/06_2.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/06_3.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/06_4.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/06_5.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/06_6.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/06_7.jpg"></div>
+						</div>
+					</div>
+				</div>	
+			</div>
+			<img class="next" idx="5" src="./imgs/next.png">
+	    </div>
+	    <!-- 第七屏 -->
+	    <div class="swiper-slide">
+	    	<div class="page-bg"><img class="img" src="./imgs/bg_7.jpg"></div>
+	    	<div class="second-page third-padding">
+				<div class="second-top font2">各个小队都拿出自己的特色节目，唱歌、跳舞、小品、反串、无所不有。晚会上大家尽情享受着节目带来的喜感，山谷夜间的幽静被我们的欢笑声打破了。</div>
+				<div class="fouth-btm">
+					<div class="second-bg"><img class="img" src="./imgs/03_pbg.png"></div>
+					<div class="second-container" id='seventh'>
+						<div class="swiper-wrapper">
+							<div class="swiper-slide"><img class="imga" src="./imgs/07_1.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/07_2.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/07_3.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/07_4.jpg"></div>
+						</div>
+					</div>
+				</div>	
+			</div>
+			<img class="next" idx="6" src="./imgs/next.png">
+	    </div>
+	    <!-- 第八屏 -->
+	    <div class="swiper-slide">
+	    	<div class="page-bg"><img class="img" src="./imgs/bg_8.jpg"></div>
+	    	<div class="second-page third-padding">
+				<div class="second-top font1">第二天，小伙伴们乘车前往连云山漂流。溪流时缓时急平缓处，如闲庭信步，悠然自得；湍急处，飞筏似箭，有惊无险。迂回流连，驰魂奔魄，心旷神怡。</div>
+				<div class="fouth-btm">
+					<div class="second-bg"><img class="img" src="./imgs/03_pbg.png"></div>
+					<div class="second-container" id='eighth'>
+						<div class="swiper-wrapper">
+							<div class="swiper-slide"><img class="imga" src="./imgs/08_2.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/08_3.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/08_4.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/08_5.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/08_6.jpg"></div>
+							<div class="swiper-slide"><img class="imga" src="./imgs/08_7.jpg"></div>
+						</div>
+					</div>
+				</div>	
+			</div>
+			<img class="next" idx="7" src="./imgs/next.png">
+	    </div>
+	    <!-- 第九屏 -->
+	    <div class="swiper-slide">
+	    	<div class="page-bg"><img class="img" src="./imgs/bg_9.jpg"></div>
+	    </div>
+
+	  </div>
+	</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.js"></script>	
+<script>
+	var audio = document.getElementById('audio'); 
+    document.addEventListener("WeixinJSBridgeReady", function () {
+        audio.load();
+        audio.play();
+    }, false);
+	function play(){
+	 if(audio!==null){             
+	  if(audio.paused)                     {                 
+	      audio.play();//audio.play();// 这个就是播放  
+	  }else{
+	   audio.pause();// 这个就是暂停
+	  }
+	 } 
+	}
+	var mySwiper = new Swiper('#all', {
+		direction: 'vertical'
+	})
+	var second = new Swiper('#second', {
+		loop: true
+	})
+	var third = new Swiper('#third', {
+		loop: true
+	})
+	var fouth = new Swiper('#fouth', {
+		loop: true
+	})
+	var fifth = new Swiper('#fifth', {
+		loop: true
+	})
+	var sixth = new Swiper('#sixth', {
+		loop: true
+	})
+	var seventh = new Swiper('#seventh', {
+		loop: true
+	})
+	var eighth = new Swiper('#eighth', {
+		loop: true
+	})
+	var nexts = document.getElementsByClassName('next');
+	for(var i = 0; i < nexts.length; i++) {
+		nexts[i].onclick = function() {
+			mySwiper.slideTo(this.getAttribute('idx')*1 + 1)
+		}
+	}
+</script>
+</body>
+</html>
